@@ -68,12 +68,12 @@ while True:
                 # Check if written value is integer
                 try:
                     value = int(text)
-                    write_int(s7, 2, 2 * i, value)
+                    write_int(s7, 2, 2+(2 * i), value)
                 except ValueError:
                     Sg.popup('Integer is not valid')
                     event = 'B'
                     break
-            window[f'in_int_{i}'].Update(value=read_int(s7, 2, 2 * i))
+            window[f'in_int_{i}'].Update(value=read_int(s7, 2, 2+(2 * i)))
 
         # String values
         value_str = values[f'in_str_0']
